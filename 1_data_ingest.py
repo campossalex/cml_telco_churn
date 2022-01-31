@@ -120,8 +120,7 @@ schema = StructType(
 storage = os.environ['STORAGE']
 
 telco_data = spark.read.csv(
-    "{}/datalake/data/churn/WA_Fn-UseC_-Telco-Customer-Churn-.csv".format(
-        storage),
+    "file:/home/cdsw/raw/WA_Fn-UseC_-Telco-Customer-Churn-.csv",
     header=True,
     schema=schema,
     sep=',',
