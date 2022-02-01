@@ -95,7 +95,7 @@ create_jobs_params = {"name": "Train Model " + run_time_suffix,
                       "success_recipients": [],
                       "failure_recipients": [],
                       "timeout_recipients": [],
-                      "stopped_recipients": [],"runtime_id":64
+                      "stopped_recipients": []
                       }
 
 new_job = cml.create_job(create_jobs_params)
@@ -179,7 +179,7 @@ create_model_params = {
     "memoryMb": 2048,
     "nvidiaGPUs": 0,
     "replicationPolicy": {"type": "fixed", "numReplicas": 1},
-    "environment": {},"runtimeId":64}
+    "environment": {}}
 
 new_model_details = cml.create_model(create_model_params)
 access_key = new_model_details["accessKey"]  # todo check for bad response
@@ -222,7 +222,7 @@ create_application_params = {
     "type": "manual",
     "script": "6_application.py", "environment": {},
     "kernel": "python3", "cpu": 1, "memory": 2,
-    "nvidia_gpu": 0,"runtime_id":64
+    "nvidia_gpu": 0
 }
 
 new_application_details = cml.create_application(create_application_params)
